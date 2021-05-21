@@ -29,7 +29,7 @@ pipeline {
             }
             steps {
                 echo 'prod branch deployment .'
-             snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "prod_artifact.jar","version": "1.3","semanticVersion": "1.3.0","repositoryName": "Test"}],"stageName": "Deploy for production"}""")
+                snDevOpsArtifact(artifactsPayload:"""{"artifacts": [{"name": "ArtifactProd", "version": "1.${BUILD_NUMBER}", "semanticVersion": "1.${BUILD_NUMBER}.0","repositoryName": "Test"}],"stageName": "Deploy for development"}""")
                 sleep 5
             }
         }
